@@ -1,6 +1,6 @@
 # Christmas with the Fernandes Family
 
-A phone-first Christmas invitation with a red and green holiday theme, black-tie dress code, Google Maps pin, and WhatsApp RSVP handoff. Built with plain HTML, CSS, and JavaScript for GitHub Pages.
+A phone-first Christmas invitation with a red and green holiday theme, black-tie dress code, pinned map preview, Google Maps directions, and WhatsApp RSVP handoff. Built with plain HTML, CSS, and JavaScript for GitHub Pages.
 
 ## RSVP flow
 
