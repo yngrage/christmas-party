@@ -1,5 +1,5 @@
 const EVENT = {
-  mapUrl: 'https://maps.app.goo.gl/kh6TvgdRQW5SgRxw8',
+  mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=18.8715876%2C73.2919792',
   whatsappNumber: '919137842768'
 };
 
