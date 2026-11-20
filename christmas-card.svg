@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a8293b"/><stop offset="1" stop-color="#741c2a"/></linearGradient><radialGradient id="glow"><stop stop-color="#fff4d0"/><stop offset="1" stop-color="#e9c776"/></radialGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="5" fill="none" stroke="#e9c776" stroke-opacity=".65" stroke-width="2"/>
+  <circle cx="925" cy="310" r="185" fill="none" stroke="#f1d38a" stroke-opacity=".5" stroke-width="2"/>
+  <circle cx="925" cy="310" r="166" fill="none" stroke="#5f945d" stroke-width="15" stroke-dasharray="3 7"/>
+  <g fill="#6fa065" font-size="92" font-family="Georgia"><text x="752" y="160">❧</text><text x="964" y="160" transform="rotate(78 964 160)">❧</text><text x="1038" y="332" transform="rotate(150 1038 332)">❧</text><text x="950" y="500" transform="rotate(248 950 500)">❧</text><text x="760" y="475" transform="rotate(310 760 475)">❧</text><text x="730" y="292" transform="rotate(32 730 292)">❧</text></g>
+  <circle cx="845" cy="180" r="12" fill="url(#glow)"/><circle cx="1047" cy="244" r="11" fill="#c3464d"/><circle cx="878" cy="485" r="12" fill="url(#glow)"/><circle cx="1004" cy="437" r="10" fill="#c3464d"/>
+  <path d="M900 139c-51-52-79 15-16 47l38 20 3-40c3-55-57-56-25-2m45-25c51-52 79 15 16 47l-38 20-3-40c-3-55 57-56 25-2" fill="#bf404b" stroke="#e9c776" stroke-width="4"/><circle cx="938" cy="190" r="17" fill="#d9565d"/>
+  <text x="102" y="164" fill="#f0d18a" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="6">YOU’RE WARMLY INVITED</text>
+  <text x="95" y="286" fill="#fff8ed" font-family="Georgia,serif" font-size="78">A little</text>
+  <text x="95" y="380" fill="#fff8ed" font-family="Georgia,serif" font-size="78">Christmas</text>
+  <text x="95" y="474" fill="#f0d18a" font-family="Georgia,serif" font-style="italic" font-size="82">magic.</text>
+  <text x="102" y="540" fill="#fff8ed" fill-opacity=".8" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">GATHER • LAUGH • BE MERRY</text>
+</svg>
