@@ -8,4 +8,4 @@ Guests enter their name, mobile number, party size, overnight stay preference, o
 
 ## Event details
 
-The date and time are still to be announced. Update the event text in `index.html`. The Google Maps share link and RSVP WhatsApp number are in `script.js`.
+Saturday, 26 December 2026, from 8 PM onwards. Hosted by the Fernandes Family. Dress code: black tie. The Google Maps share link and RSVP WhatsApp number are in `script.js`.
