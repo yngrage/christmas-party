@@ -3,7 +3,7 @@ const EVENT = {
   whatsappNumber: '919137842768'
 };
 
-document.querySelectorAll('#map-link, #map-card').forEach(link => {
+document.querySelectorAll('#map-link').forEach(link => {
   link.href = EVENT.mapUrl;
 });
 
