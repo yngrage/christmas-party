@@ -9,12 +9,3 @@ Guests enter their name, mobile number, party size, overnight stay preference, o
 ## Event details
 
 Saturday, 26 December 2026, from 8 PM onwards. Hosted by the Fernandes Family. Dress code: black tie. The Google Maps share link and RSVP WhatsApp number are in `script.js`.
-
-## Music
-
-The music player uses the supplied `let-it-snow.mp3` file and starts only when a visitor presses Play.
-
-
-## Pages
-
-The invitation is arranged as a touch-friendly, three-page deck: invitation, event details and map, then RSVP.
