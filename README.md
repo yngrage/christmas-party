@@ -12,4 +12,9 @@ Saturday, 26 December 2026, from 8 PM onwards. Hosted by the Fernandes Family. D
 
 ## Music
 
-A licensed audio file is not included. To enable the optional player, add an MP3 you are authorized to use as `let-it-snow.mp3` beside `index.html`. Playback starts only when a visitor presses the music button. No copyrighted recording is bundled with this site.
+The music player uses the supplied `let-it-snow.mp3` file and starts only when a visitor presses Play.
+
+
+## Pages
+
+The invitation is arranged as a touch-friendly, three-page deck: invitation, event details and map, then RSVP.

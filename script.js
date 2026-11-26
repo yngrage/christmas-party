@@ -45,16 +45,16 @@ updateCountdown();setInterval(updateCountdown,1000);
 
 // Surprise Santa after a randomized, non-repeat delay, only once the guest explores.
 const santa=document.querySelector('#santa-surprise'); let explored=false, santaShown=false;
-const showSanta=()=>{if(explored&&!santaShown){santaShown=true;santa.classList.add('is-visible');santa.setAttribute('aria-hidden','false');}};
-const santaTimer=setTimeout(showSanta,28000+Math.random()*18000);
-addEventListener('scroll',()=>{explored=true;if(Date.now()>performance.timeOrigin+30000)showSanta();},{passive:true});
+const showSanta=()=>{if(explored&&!santaShown&&currentSlide<2){santaShown=true;santa.classList.add('is-visible');santa.setAttribute('aria-hidden','false');}};
+const santaTimer=setTimeout(showSanta,50000+Math.random()*30000);
+addEventListener('scroll',()=>{explored=true;if(Date.now()>performance.timeOrigin+50000)showSanta();},{passive:true});
 document.querySelector('#santa-close').addEventListener('click',()=>{santa.classList.remove('is-visible');santa.setAttribute('aria-hidden','true');clearTimeout(santaTimer);});
 const toast=document.querySelector('#magic-toast');let toastTimer;
 function message(text){toast.textContent=text;toast.classList.add('is-visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('is-visible'),3600);}
-document.querySelector('#santa-magic').addEventListener('click',()=>{message('✨ Christmas magic sent! See you at the party. ✨');santa.classList.remove('is-visible');});
+document.querySelector('#santa-magic').addEventListener('click',()=>{message('Christmas magic sent. See you at the party.');santa.classList.remove('is-visible');});
 document.querySelector('#gift-surprise').addEventListener('click',()=>message('Your gift: one extra helping of Christmas pudding.'));
 document.querySelectorAll('[data-sound="bell"]').forEach(b=>b.addEventListener('click',()=>{b.classList.add('ringing');setTimeout(()=>b.classList.remove('ringing'),650);message('A little Christmas cheer for you.');}));
-document.querySelector('.hero-art').addEventListener('click',e=>{if(e.target.closest('button'))return;message('✦ A little sparkle for your Christmas wish ✦');});
+document.querySelector('.hero-art').addEventListener('click',e=>{if(e.target.closest('button'))return;message('A little sparkle for your Christmas wish.');});
 
 // Music is opt-in. Add a licensed file named let-it-snow.mp3 beside index.html.
 const audio=document.querySelector('#christmas-audio'), musicButton=document.querySelector('#music-toggle'), musicStatus=document.querySelector('#music-status');
@@ -86,5 +86,26 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
       }
     });
   }, {threshold: 0.12});
-  document.querySelectorAll('main>section:not(.hero)').forEach(section => revealObserver.observe(section));
+  document.querySelectorAll('main .story-slide').forEach(section => revealObserver.observe(section));
 }
+
+
+// Three-page, touch-friendly invitation deck. Scrolling and swiping snap between pages.
+const deck = document.querySelector('#story-deck');
+const slides = [...document.querySelectorAll('.story-slide')];
+const slideCount = document.querySelector('#slide-count');
+let currentSlide = 0;
+function goToSlide(index) {
+  currentSlide = Math.max(0, Math.min(slides.length - 1, index));
+  slides[currentSlide].scrollIntoView({behavior:'smooth',block:'start'});
+  slideCount.textContent = `${String(currentSlide + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+  document.querySelector('#previous-slide').disabled = currentSlide === 0;
+  document.querySelector('#next-slide').disabled = currentSlide === slides.length - 1;
+}
+document.querySelector('#previous-slide').addEventListener('click',()=>goToSlide(currentSlide-1));
+document.querySelector('#next-slide').addEventListener('click',()=>goToSlide(currentSlide+1));
+const slideObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){currentSlide=slides.indexOf(entry.target);slideCount.textContent=`${String(currentSlide+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;document.querySelector('#previous-slide').disabled=currentSlide===0;document.querySelector('#next-slide').disabled=currentSlide===slides.length-1;}});
+},{root:deck,threshold:.55});
+slides.forEach(slide=>slideObserver.observe(slide));
+goToSlide(0);

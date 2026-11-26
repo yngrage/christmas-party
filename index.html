@@ -15,17 +15,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="preload" href="christmas-card.svg" as="image" type="image/svg+xml">
 </head>
 <body>
   <canvas class="snow-canvas" id="snow-canvas" aria-hidden="true"></canvas>
   <section class="christmas-intro" id="christmas-intro" aria-label="Christmas welcome">
-    <div class="intro-stars" aria-hidden="true">✦　·　✧　·　✦</div>
-    <div class="intro-tree" aria-hidden="true"><span>✦</span><i>✦</i><b>✦</b></div>
+    <div class="intro-stars" aria-hidden="true"></div>
+    <div class="intro-tree" aria-hidden="true"><span></span><i></i><b></b></div>
     <p class="intro-kicker">IT’S THE MOST WONDERFUL TIME OF THE YEAR</p>
     <h2>Christmas with<br><em>the Fernandes Family</em></h2>
-    <button class="button button-light" id="enter-magic">ENTER THE CHRISTMAS MAGIC <span>✦</span></button>
+    <button class="button button-light" id="enter-magic">ENTER THE CHRISTMAS MAGIC</button>
     <button class="intro-skip" id="skip-intro">Skip intro</button>
   </section>
   <aside class="santa-surprise" id="santa-surprise" aria-live="polite" aria-hidden="true">
@@ -37,7 +37,7 @@
   </aside>
   <div class="reindeer-flight" aria-hidden="true"><img src="reindeer.png" alt=""></div>
   <header class="topbar">
-    <a class="wordmark" href="#home"><span aria-hidden="true">✳</span> CHRISTMAS TOGETHER</a>
+    <a class="wordmark" href="#home"><span class="wordmark-star" aria-hidden="true"></span> CHRISTMAS TOGETHER</a>
     <a class="top-link" href="#rsvp">SAVE YOUR SPOT <span aria-hidden="true">↓</span></a>
   </header>
   <div class="music-player" aria-label="Christmas music player">
@@ -48,6 +48,8 @@
   </div>
 
   <main>
+    <div class="story-deck" id="story-deck">
+    <section class="story-slide invite-slide" id="slide-one" aria-label="Invitation, page 1 of 3">
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> YOU’RE WARMLY INVITED</p>
@@ -64,9 +66,11 @@
         <button class="decoration bell-decoration" data-sound="bell" aria-label="Ring the Christmas bell"></button>
         <button class="decoration gift-decoration" id="gift-surprise" aria-label="Open a Christmas gift"></button>
       </div>
-      <span class="hero-snow" aria-hidden="true">✳　·　✧　·　✳</span>
+      <span class="hero-snow" aria-hidden="true"></span>
     </section>
 
+    </section>
+    <section class="story-slide photo-slide" id="slide-two" aria-label="Party details, page 2 of 3">
     <section class="details section-pad" id="details">
       <div class="section-heading">
         <p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> THE GATHERING</p>
@@ -98,13 +102,15 @@
       </div>
     </section>
 
+    </section>
+    <section class="story-slide rsvp-slide" id="slide-three" aria-label="RSVP, page 3 of 3">
     <section class="rsvp-section" id="rsvp">
       <div class="rsvp-wrap">
         <div class="rsvp-heading">
           <p class="eyebrow"><span class="eyebrow-line"></span> A PLACE AT THE TABLE</p>
           <h2>We saved<br>a spot <em>for you.</em></h2>
           <p>Let us know you’re coming. Add your details and we’ll make sure there’s room for everyone.</p>
-          <div class="rsvp-flourish" aria-hidden="true">✳ &nbsp; ✧ &nbsp; ✳</div>
+          <div class="rsvp-flourish" aria-hidden="true"></div>
         </div>
         <form class="rsvp-form" id="rsvp-form">
         <label for="guest-name">Your name <span>*</span></label>
@@ -125,10 +131,16 @@
         </form>
       </div>
     </section>
-
+    <footer class="story-footer"><span>CHRISTMAS TOGETHER</span><span>MADE FOR GATHERING <span class="footer-star" aria-hidden="true"></span></span></footer>
+    </section>
+    </div>
   </main>
-  <footer><span>CHRISTMAS TOGETHER</span><span>MADE FOR GATHERING <span class="footer-star">✳</span></span></footer>
+  <nav class="slide-nav" aria-label="Invitation pages">
+    <button id="previous-slide" type="button" aria-label="Previous page">PREVIOUS</button>
+    <span id="slide-count" aria-live="polite">01 / 03</span>
+    <button id="next-slide" type="button" aria-label="Next page">NEXT</button>
+  </nav>
   <div class="magic-toast" id="magic-toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
