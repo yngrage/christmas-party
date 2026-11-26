@@ -8,47 +8,22 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Christmas with the Fernandes Family">
   <meta property="og:description" content="A black-tie Christmas gathering. Save your spot and join us for a little holiday magic.">
-  <meta property="og:image" content="https://yngrage.github.io/christmas-party/christmas-card.svg">
+  <meta property="og:image" content="https://yngrage.github.io/a-very-merry-gathering/christmas-card.svg">
   <meta name="twitter:card" content="summary_large_image">
   <title>Christmas with the Fernandes Family</title>
   <link rel="icon" href="christmas-card.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <link rel="preload" href="christmas-frame.jpg" as="image">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
-  <canvas class="snow-canvas" id="snow-canvas" aria-hidden="true"></canvas>
-  <section class="christmas-intro" id="christmas-intro" aria-label="Christmas welcome">
-    <p class="intro-kicker">IT’S THE MOST WONDERFUL TIME OF THE YEAR</p>
-    <div class="intro-tree" aria-hidden="true"><span></span><i></i><b></b></div>
-    <h2>Christmas with<br><em>the Fernandes Family</em></h2>
-    <button class="button button-light" id="enter-magic" type="button">ENTER THE CHRISTMAS MAGIC</button>
-    <button class="intro-skip" id="skip-intro" type="button">Skip intro</button>
-  </section>
-  <aside class="santa-surprise" id="santa-surprise" aria-live="polite" aria-hidden="true">
-    <button class="santa-close" id="santa-close" type="button" aria-label="Dismiss Santa">Close</button>
-    <div class="santa-figure" aria-hidden="true"><span class="santa-hat"></span></div>
-    <p class="santa-kicker">A NORTH POLE SURPRISE</p>
-    <h2>You’re invited to the Christmas celebration.</h2>
-    <button class="button button-light" id="santa-magic" type="button">SEND SOME CHRISTMAS MAGIC</button>
-  </aside>
   <header class="topbar">
-    <a class="wordmark" href="#home"><span class="wordmark-star" aria-hidden="true"></span> CHRISTMAS TOGETHER</a>
+    <a class="wordmark" href="#home"><span aria-hidden="true">✳</span> CHRISTMAS TOGETHER</a>
     <a class="top-link" href="#rsvp">SAVE YOUR SPOT <span aria-hidden="true">↓</span></a>
   </header>
 
-  <div class="music-player" aria-label="Christmas music player">
-    <button id="music-toggle" type="button" aria-label="Play Christmas music">♫</button>
-    <span id="music-status">Let It Snow · ready when you are</span>
-    <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.55" aria-label="Music volume">
-    <audio id="christmas-audio" preload="metadata" loop src="let-it-snow.mp3"></audio>
-  </div>
-
   <main>
-    <div class="story-deck" id="story-deck">
-    <section class="story-slide invite-slide" id="slide-one" aria-label="Invitation, page 1 of 3">
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> YOU’RE WARMLY INVITED</p>
@@ -63,12 +38,9 @@
         <div class="bow" aria-hidden="true"><span></span><span></span><i></i></div>
         <div class="hero-art-caption">GATHER • LAUGH • BE MERRY</div>
       </div>
-      <img class="hero-reindeer" src="reindeer.png" alt="Vintage illustration of a reindeer with a red ribbon">
-      <span class="hero-snow" aria-hidden="true"></span>
-    </section>
+      <span class="hero-snow" aria-hidden="true">✳　·　✧　·　✳</span>
     </section>
 
-    <section class="story-slide photo-slide" id="slide-two" aria-label="Party details, page 2 of 3">
     <section class="details section-pad" id="details">
       <div class="section-heading">
         <p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> THE GATHERING</p>
@@ -77,9 +49,9 @@
       <div class="detail-content">
         <p class="details-intro">An evening for the people who make the season feel like home. Come hungry, bring your best holiday stories, and stay awhile.</p>
         <div class="detail-grid">
-          <div class="detail-item"><span class="detail-label">WHEN</span><span class="detail-value">Saturday, 26 December 2026</span></div>
+          <div class="detail-item"><span class="detail-label">WHEN</span><span class="detail-value">Saturday, 26 December 2026</span><span class="detail-note">Boxing Day</span></div>
           <div class="detail-item"><span class="detail-label">TIME</span><span class="detail-value">8 PM onwards</span><span class="detail-note">Come celebrate with us</span></div>
-          <a class="detail-item detail-item-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=18.8715876%2C73.2919792" target="_blank" rel="noopener" aria-label="Open Google Maps directions to Amalthea Farms"><span class="detail-label">WHERE</span><span class="detail-value">Amalthea Farms</span><span class="detail-note">Tap to open Google Maps directions ↗</span></a>
+          <div class="detail-item"><span class="detail-label">WHERE</span><span class="detail-value">Amalthea Farms</span><span class="detail-note">Tap for directions</span></div>
           <div class="detail-item"><span class="detail-label">HOSTED BY</span><span class="detail-value">Fernandes Family</span><span class="detail-note">With love, always</span></div>
           <div class="detail-item"><span class="detail-label">DRESS CODE</span><span class="detail-value">Black tie</span><span class="detail-note">Dress for a festive evening</span></div>
         </div>
@@ -98,16 +70,14 @@
         <iframe title="Map showing Amalthea Farms and its event pin" src="https://www.openstreetmap.org/export/embed.html?bbox=73.279%2C18.862%2C73.305%2C18.881&amp;layer=mapnik&amp;marker=18.8715876%2C73.2919792" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="eager"></iframe>
       </div>
     </section>
-    </section>
 
-    <section class="story-slide rsvp-slide" id="slide-three" aria-label="RSVP, page 3 of 3">
     <section class="rsvp-section" id="rsvp">
       <div class="rsvp-wrap">
         <div class="rsvp-heading">
           <p class="eyebrow"><span class="eyebrow-line"></span> A PLACE AT THE TABLE</p>
           <h2>We saved<br>a spot <em>for you.</em></h2>
           <p>Let us know you’re coming. Add your details and we’ll make sure there’s room for everyone.</p>
-          <div class="rsvp-flourish" aria-hidden="true"></div>
+          <div class="rsvp-flourish" aria-hidden="true">✳ &nbsp; ✧ &nbsp; ✳</div>
         </div>
         <form class="rsvp-form" id="rsvp-form">
         <label for="guest-name">Your name <span>*</span></label>
@@ -129,16 +99,8 @@
       </div>
     </section>
 
-    <footer class="story-footer"><span>CHRISTMAS TOGETHER</span><span>MADE FOR GATHERING <span class="footer-star" aria-hidden="true"></span></span></footer>
-    </section>
-    </div>
   </main>
-  <nav class="slide-nav" aria-label="Invitation pages">
-    <button id="previous-slide" type="button" aria-label="Previous page">PREVIOUS</button>
-    <span id="slide-count" aria-live="polite">01 / 03</span>
-    <button id="next-slide" type="button" aria-label="Next page">NEXT</button>
-  </nav>
-  <div class="magic-toast" id="magic-toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=4"></script>
+  <footer><span>CHRISTMAS TOGETHER</span><span>MADE FOR GATHERING <span class="footer-star">✳</span></span></footer>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
