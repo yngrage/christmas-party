@@ -108,35 +108,23 @@ function renderSlideNavigation(){
   document.querySelector('#previous-slide').disabled=currentSlide===0;
   document.querySelector('#next-slide').disabled=currentSlide===slides.length-1;
 }
-function updateVisibleSlide(){
-  const root=deck.getBoundingClientRect();
-  currentSlide=slides.reduce((best,slide,index)=>{
-    const rect=slide.getBoundingClientRect();
-    const visible=Math.max(0,Math.min(rect.bottom,root.bottom)-Math.max(rect.top,root.top));
-    const bestRect=slides[best].getBoundingClientRect();
-    const bestVisible=Math.max(0,Math.min(bestRect.bottom,root.bottom)-Math.max(bestRect.top,root.top));
-    return visible>bestVisible?index:best;
-  },0);
-  renderSlideNavigation();
+function slideIndexForHash(hash){
+  const id=hash.startsWith('#')?hash.slice(1):hash;
+  if(id==='rsvp'||id==='slide-three')return 2;
+  if(id==='details'||id==='location'||id==='slide-two')return 1;
+  if(id==='home'||id==='slide-one')return 0;
+  return -1;
 }
 document.querySelector('#previous-slide').addEventListener('click',()=>goToSlide(currentSlide-1));
 document.querySelector('#next-slide').addEventListener('click',()=>goToSlide(currentSlide+1));
 document.addEventListener('click',event=>{
   const link=event.target.closest('a[href^="#"]');
   if(!link)return;
-  const target=document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));
-  if(!target)return;
-  const index=slides.findIndex(slide=>slide.contains(target));
+  const index=slideIndexForHash(link.getAttribute('href'));
   if(index<0)return;
   event.preventDefault();
   history.replaceState(null,'',link.getAttribute('href'));
   goToSlide(index);
 });
-let slideScrollFrame;
-deck.addEventListener('scroll',()=>{
-  cancelAnimationFrame(slideScrollFrame);
-  slideScrollFrame=requestAnimationFrame(updateVisibleSlide);
-},{passive:true});
-const initialTarget=document.getElementById(decodeURIComponent(location.hash.slice(1)));
-const initialIndex=initialTarget?slides.findIndex(slide=>slide.contains(initialTarget)):-1;
+const initialIndex=slideIndexForHash(location.hash);
 goToSlide(initialIndex>=0?initialIndex:0);
