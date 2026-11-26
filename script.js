@@ -128,3 +128,7 @@ document.addEventListener('click',event=>{
 });
 const initialIndex=slideIndexForHash(location.hash);
 goToSlide(initialIndex>=0?initialIndex:0);
+setTimeout(()=>{
+  const routeIndex=slideIndexForHash(location.hash);
+  if(routeIndex>0&&currentSlide===0)goToSlide(routeIndex);
+},150);
