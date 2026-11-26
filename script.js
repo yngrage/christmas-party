@@ -29,7 +29,10 @@ addEventListener('pointermove',e=>{pointerX=e.clientX-innerWidth/2},{passive:tru
 // Cinematic entry, shown once per browser tab. Skip and enter lead to the same invite.
 const intro=document.querySelector('#christmas-intro');
 function enterInvite(){intro.classList.add('is-hidden');sessionStorage.setItem('christmasIntroSeen','yes');setTimeout(()=>intro.remove(),1100);}
-if(sessionStorage.getItem('christmasIntroSeen')) intro.remove();
+if(sessionStorage.getItem('christmasIntroSeen')||(location.hash&&location.hash!=='#home')){
+  intro.remove();
+  sessionStorage.setItem('christmasIntroSeen','yes');
+}
 document.querySelector('#enter-magic').addEventListener('click',enterInvite);
 document.querySelector('#skip-intro').addEventListener('click',enterInvite);
 
@@ -98,14 +101,42 @@ let currentSlide = 0;
 function goToSlide(index) {
   currentSlide = Math.max(0, Math.min(slides.length - 1, index));
   slides[currentSlide].scrollIntoView({behavior:'smooth',block:'start'});
-  slideCount.textContent = `${String(currentSlide + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
-  document.querySelector('#previous-slide').disabled = currentSlide === 0;
-  document.querySelector('#next-slide').disabled = currentSlide === slides.length - 1;
+  renderSlideNavigation();
+}
+function renderSlideNavigation(){
+  slideCount.textContent=`${String(currentSlide+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+  document.querySelector('#previous-slide').disabled=currentSlide===0;
+  document.querySelector('#next-slide').disabled=currentSlide===slides.length-1;
+}
+function updateVisibleSlide(){
+  const root=deck.getBoundingClientRect();
+  currentSlide=slides.reduce((best,slide,index)=>{
+    const rect=slide.getBoundingClientRect();
+    const visible=Math.max(0,Math.min(rect.bottom,root.bottom)-Math.max(rect.top,root.top));
+    const bestRect=slides[best].getBoundingClientRect();
+    const bestVisible=Math.max(0,Math.min(bestRect.bottom,root.bottom)-Math.max(bestRect.top,root.top));
+    return visible>bestVisible?index:best;
+  },0);
+  renderSlideNavigation();
 }
 document.querySelector('#previous-slide').addEventListener('click',()=>goToSlide(currentSlide-1));
 document.querySelector('#next-slide').addEventListener('click',()=>goToSlide(currentSlide+1));
-const slideObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{if(entry.isIntersecting){currentSlide=slides.indexOf(entry.target);slideCount.textContent=`${String(currentSlide+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;document.querySelector('#previous-slide').disabled=currentSlide===0;document.querySelector('#next-slide').disabled=currentSlide===slides.length-1;}});
-},{root:deck,threshold:.55});
-slides.forEach(slide=>slideObserver.observe(slide));
-goToSlide(0);
+document.addEventListener('click',event=>{
+  const link=event.target.closest('a[href^="#"]');
+  if(!link)return;
+  const target=document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));
+  if(!target)return;
+  const index=slides.findIndex(slide=>slide.contains(target));
+  if(index<0)return;
+  event.preventDefault();
+  history.replaceState(null,'',link.getAttribute('href'));
+  goToSlide(index);
+});
+let slideScrollFrame;
+deck.addEventListener('scroll',()=>{
+  cancelAnimationFrame(slideScrollFrame);
+  slideScrollFrame=requestAnimationFrame(updateVisibleSlide);
+},{passive:true});
+const initialTarget=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+const initialIndex=initialTarget?slides.findIndex(slide=>slide.contains(initialTarget)):-1;
+goToSlide(initialIndex>=0?initialIndex:0);
