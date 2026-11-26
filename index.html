@@ -15,36 +15,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
-  <link rel="preload" href="christmas-card.svg" as="image" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="preload" href="christmas-frame.jpg" as="image">
 </head>
 <body>
   <canvas class="snow-canvas" id="snow-canvas" aria-hidden="true"></canvas>
   <section class="christmas-intro" id="christmas-intro" aria-label="Christmas welcome">
-    <div class="intro-stars" aria-hidden="true"></div>
-    <div class="intro-tree" aria-hidden="true"><span></span><i></i><b></b></div>
     <p class="intro-kicker">IT’S THE MOST WONDERFUL TIME OF THE YEAR</p>
+    <div class="intro-tree" aria-hidden="true"><span></span><i></i><b></b></div>
     <h2>Christmas with<br><em>the Fernandes Family</em></h2>
-    <button class="button button-light" id="enter-magic">ENTER THE CHRISTMAS MAGIC</button>
-    <button class="intro-skip" id="skip-intro">Skip intro</button>
+    <button class="button button-light" id="enter-magic" type="button">ENTER THE CHRISTMAS MAGIC</button>
+    <button class="intro-skip" id="skip-intro" type="button">Skip intro</button>
   </section>
   <aside class="santa-surprise" id="santa-surprise" aria-live="polite" aria-hidden="true">
-    <button class="santa-close" id="santa-close" aria-label="Dismiss Santa">×</button>
+    <button class="santa-close" id="santa-close" type="button" aria-label="Dismiss Santa">Close</button>
     <div class="santa-figure" aria-hidden="true"><span class="santa-hat"></span></div>
     <p class="santa-kicker">A NORTH POLE SURPRISE</p>
-    <h2>HO HO HO! You’re invited to the Christmas celebration!</h2>
-    <button class="button button-light" id="santa-magic">SEND SOME CHRISTMAS MAGIC</button>
+    <h2>You’re invited to the Christmas celebration.</h2>
+    <button class="button button-light" id="santa-magic" type="button">SEND SOME CHRISTMAS MAGIC</button>
   </aside>
-  <div class="reindeer-flight" aria-hidden="true"><img src="reindeer.png" alt=""></div>
   <header class="topbar">
     <a class="wordmark" href="#home"><span class="wordmark-star" aria-hidden="true"></span> CHRISTMAS TOGETHER</a>
     <a class="top-link" href="#rsvp">SAVE YOUR SPOT <span aria-hidden="true">↓</span></a>
   </header>
+
   <div class="music-player" aria-label="Christmas music player">
-    <button id="music-toggle" aria-label="Play Christmas music" title="Play Christmas music">♫</button>
-    <span id="music-status">Let It Snow · add your licensed MP3</span>
+    <button id="music-toggle" type="button" aria-label="Play Christmas music">♫</button>
+    <span id="music-status">Let It Snow · ready when you are</span>
     <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.55" aria-label="Music volume">
-    <audio id="christmas-audio" preload="metadata" loop></audio>
+    <audio id="christmas-audio" preload="metadata" loop src="let-it-snow.mp3"></audio>
   </div>
 
   <main>
@@ -58,18 +57,17 @@
         <a class="button button-light" href="#details">COME CELEBRATE <span aria-hidden="true">↓</span></a>
         <p class="hero-footnote">Christmas with the Fernandes Family</p>
       </div>
-      <div class="hero-art" role="group" aria-label="A Christmas wreath with festive surprises">
+      <div class="hero-art" role="img" aria-label="A Christmas wreath with a red bow and winter greenery">
         <div class="wreath-ring"><span class="wreath-leaf leaf-a">❧</span><span class="wreath-leaf leaf-b">❧</span><span class="wreath-leaf leaf-c">❧</span><span class="wreath-leaf leaf-d">❧</span><span class="wreath-leaf leaf-e">❧</span><span class="wreath-leaf leaf-f">❧</span><span class="wreath-leaf leaf-g">❧</span><span class="wreath-leaf leaf-h">❧</span></div>
         <span class="wreath-berry berry-a"></span><span class="wreath-berry berry-b"></span><span class="wreath-berry berry-c"></span>
         <div class="bow" aria-hidden="true"><span></span><span></span><i></i></div>
         <div class="hero-art-caption">GATHER • LAUGH • BE MERRY</div>
-        <button class="decoration bell-decoration" data-sound="bell" aria-label="Ring the Christmas bell"></button>
-        <button class="decoration gift-decoration" id="gift-surprise" aria-label="Open a Christmas gift"></button>
       </div>
+      <img class="hero-reindeer" src="reindeer.png" alt="Vintage illustration of a reindeer with a red ribbon">
       <span class="hero-snow" aria-hidden="true"></span>
     </section>
-
     </section>
+
     <section class="story-slide photo-slide" id="slide-two" aria-label="Party details, page 2 of 3">
     <section class="details section-pad" id="details">
       <div class="section-heading">
@@ -85,7 +83,6 @@
           <div class="detail-item"><span class="detail-label">HOSTED BY</span><span class="detail-value">Fernandes Family</span><span class="detail-note">With love, always</span></div>
           <div class="detail-item"><span class="detail-label">DRESS CODE</span><span class="detail-value">Black tie</span><span class="detail-note">Dress for a festive evening</span></div>
         </div>
-        <div class="countdown" aria-live="polite"><span class="countdown-label">UNTIL WE GATHER</span><div class="countdown-units" id="countdown"><span><b>--</b><small>DAYS</small></span><span><b>--</b><small>HOURS</small></span><span><b>--</b><small>MINUTES</small></span><span><b>--</b><small>SECONDS</small></span></div></div>
       </div>
     </section>
 
@@ -101,8 +98,8 @@
         <iframe title="Map showing Amalthea Farms and its event pin" src="https://www.openstreetmap.org/export/embed.html?bbox=73.279%2C18.862%2C73.305%2C18.881&amp;layer=mapnik&amp;marker=18.8715876%2C73.2919792" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="eager"></iframe>
       </div>
     </section>
-
     </section>
+
     <section class="story-slide rsvp-slide" id="slide-three" aria-label="RSVP, page 3 of 3">
     <section class="rsvp-section" id="rsvp">
       <div class="rsvp-wrap">
@@ -131,6 +128,7 @@
         </form>
       </div>
     </section>
+
     <footer class="story-footer"><span>CHRISTMAS TOGETHER</span><span>MADE FOR GATHERING <span class="footer-star" aria-hidden="true"></span></span></footer>
     </section>
     </div>
@@ -141,6 +139,6 @@
     <button id="next-slide" type="button" aria-label="Next page">NEXT</button>
   </nav>
   <div class="magic-toast" id="magic-toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=15"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
