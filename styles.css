@@ -17,3 +17,77 @@ html,body{height:100%;overflow:hidden}.story-deck{height:100svh;overflow-y:auto;
 .wordmark-star,.footer-star{display:inline-block;width:11px;height:11px;background:#f0d08d;clip-path:polygon(50% 0,61% 37%,100% 50%,61% 63%,50% 100%,39% 63%,0 50%,39% 37%);vertical-align:middle}.wordmark-star{margin-right:8px}.footer-star{margin-left:7px}.topbar:after{content:"";background:radial-gradient(circle,#ffe4a3 1.3px,transparent 1.8px) 0 50%/23px 6px repeat-x;height:6px}.section-pad:before,.rsvp-section:before{content:"";height:5px;background:radial-gradient(circle,#c59c58 1.5px,transparent 2px) center/24px 5px repeat-x}.hero-art:after{content:"";width:12px;height:12px;background:var(--gold-light);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}.hero-snow{position:absolute;bottom:24px;left:10%;width:78px;height:8px;background:radial-gradient(circle,#e5c979 1px,transparent 1.6px) 0 50%/20px 8px repeat-x}.intro-stars{width:90px;height:12px;background:radial-gradient(circle,#ffe4a3 2px,transparent 3px) 0 50%/30px 12px repeat-x}.intro-tree span,.intro-tree i,.intro-tree b{width:8px;height:8px;border-radius:50%;background:var(--gold-light);font-size:0}.intro-tree span{box-shadow:0 0 12px #ffe4a3}.rsvp-flourish{width:70px;height:8px;margin-top:24px;background:radial-gradient(circle,#f0d08d 1.5px,transparent 2px) 0 50%/18px 8px repeat-x}.reindeer-flight img{mix-blend-mode:normal}
 @media(max-width:760px){.story-slide{padding:60px 0 82px}.invite-slide{padding:0}.invite-slide .hero{min-height:100svh;height:100svh}.photo-slide{padding:12px 11px 84px;background-attachment:scroll}.photo-slide .details{padding:58px 6% 28px}.photo-slide .detail-grid{row-gap:10px}.photo-slide .detail-item{padding:6px}.photo-slide .location-section{padding:28px 6%}.photo-slide .map-card{height:190px}.rsvp-slide .rsvp-section{padding:72px 8% 104px}.slide-nav{bottom:10px;gap:8px}.slide-nav button{padding:8px 6px}.slide-nav span{min-width:54px;text-align:center}.music-player{bottom:62px}}
 .topbar:after{content:"";background:radial-gradient(circle,#ffe4a3 1.3px,transparent 1.8px) 0 50%/23px 6px repeat-x}.section-pad:before,.rsvp-section:before{content:"";background:radial-gradient(circle,#c59c58 1.5px,transparent 2px) center/24px 5px repeat-x}.hero-art:after{content:"";width:12px;height:12px;background:var(--gold-light);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}.story-slide:not(.is-revealed){opacity:1!important;translate:none!important}.invite-slide .hero-art{filter:none}.story-footer{position:absolute;bottom:0}.photo-slide{background-color:#42131b;background-image:radial-gradient(ellipse at center,#6e2030,#351018 75%);background-size:cover;background-position:center;background-attachment:fixed}.reindeer-flight img{mix-blend-mode:normal}
+
+/* User-supplied vintage invitation frame for page two */
+.photo-slide {
+  background-color: #3a0b12;
+  background-image: url("christmas-frame.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: auto 100%;
+  background-attachment: fixed;
+  padding: 0 0 74px;
+}
+.photo-slide .details,
+.photo-slide .location-section {
+  width: clamp(270px, 52vw, 300px);
+  max-width: calc(100% - 24px);
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.photo-slide .details {
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: clamp(145px, 23.5svh, 190px) 0 16px;
+}
+.photo-slide .section-heading h2 {
+  font-size: clamp(27px, 4vw, 34px);
+}
+.photo-slide .details-intro {
+  max-width: none;
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.photo-slide .detail-content { padding-top: 0; }
+.photo-slide .detail-grid {
+  row-gap: 8px;
+  padding-top: 12px;
+}
+.photo-slide .detail-item { padding: 5px; gap: 5px; }
+.photo-slide .detail-value { font-size: 16px; }
+.photo-slide .detail-label,
+.photo-slide .detail-note { font-size: 8px; }
+.photo-slide .countdown {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #f2e4c8e8;
+  color: var(--ink);
+  border-color: #b58a4c;
+  box-shadow: 0 3px 12px #3510181c;
+}
+.photo-slide .countdown-label,
+.photo-slide .countdown-units b { color: var(--ink); }
+.photo-slide .countdown-units small { color: #6f675b; }
+.photo-slide .countdown-units { gap: 12px; }
+.photo-slide .countdown-units b { font-size: 20px; }
+.photo-slide .location-section {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 8px 0 24px;
+}
+.photo-slide .location-copy h2 { font-size: 40px; }
+.photo-slide .location-address { margin: 10px 0 14px; font-size: 14px; }
+.photo-slide .location-section .map-card { height: 165px; }
+@media (max-width: 380px) {
+  .photo-slide .details,
+  .photo-slide .location-section { width: calc(100% - 24px); }
+}
+@media (max-width: 760px) {
+  .photo-slide { background-attachment: fixed; }
+  .photo-slide .details { padding-top: 22svh; }
+}
