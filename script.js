@@ -52,17 +52,17 @@ document.querySelector('#santa-close').addEventListener('click',()=>{santa.class
 const toast=document.querySelector('#magic-toast');let toastTimer;
 function message(text){toast.textContent=text;toast.classList.add('is-visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('is-visible'),3600);}
 document.querySelector('#santa-magic').addEventListener('click',()=>{message('✨ Christmas magic sent! See you at the party. ✨');santa.classList.remove('is-visible');});
-document.querySelector('#gift-surprise').addEventListener('click',()=>message('🎁 Your gift: one extra helping of Christmas pudding!'));
-document.querySelectorAll('[data-sound="bell"]').forEach(b=>b.addEventListener('click',()=>{b.classList.add('ringing');setTimeout(()=>b.classList.remove('ringing'),650);message('🔔 A little Christmas cheer for you!');}));
+document.querySelector('#gift-surprise').addEventListener('click',()=>message('Your gift: one extra helping of Christmas pudding.'));
+document.querySelectorAll('[data-sound="bell"]').forEach(b=>b.addEventListener('click',()=>{b.classList.add('ringing');setTimeout(()=>b.classList.remove('ringing'),650);message('A little Christmas cheer for you.');}));
 document.querySelector('.hero-art').addEventListener('click',e=>{if(e.target.closest('button'))return;message('✦ A little sparkle for your Christmas wish ✦');});
 
 // Music is opt-in. Add a licensed file named let-it-snow.mp3 beside index.html.
 const audio=document.querySelector('#christmas-audio'), musicButton=document.querySelector('#music-toggle'), musicStatus=document.querySelector('#music-status');
-audio.src='let-it-snow.mp3'; audio.volume=.55;
+audio.src='let-it-snow.mp3'; audio.preload='metadata'; audio.volume=.55; audio.load(); musicStatus.textContent='Let It Snow · ready to play';
 document.querySelector('#music-volume').addEventListener('input',e=>audio.volume=Number(e.target.value));
 audio.addEventListener('canplay',()=>{musicStatus.textContent='Let It Snow · ready when you are';musicButton.disabled=false;});
 audio.addEventListener('error',()=>{musicStatus.textContent='Let It Snow · add licensed MP3';musicButton.disabled=true;});
-musicButton.disabled=true;
+musicButton.disabled=false;
 musicButton.addEventListener('click',async()=>{if(audio.paused){try{await audio.play();musicButton.textContent='Ⅱ';musicButton.setAttribute('aria-label','Pause Christmas music');musicStatus.textContent='Let It Snow · playing';}catch{musicStatus.textContent='Add a licensed MP3 to play';}}else{audio.pause();musicButton.textContent='♫';musicButton.setAttribute('aria-label','Play Christmas music');musicStatus.textContent='Let It Snow · paused';}});
 
 const form=document.querySelector('#rsvp-form'), status=document.querySelector('#form-status');

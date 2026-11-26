@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <link rel="preload" href="christmas-card.svg" as="image" type="image/svg+xml">
 </head>
 <body>
@@ -30,12 +30,12 @@
   </section>
   <aside class="santa-surprise" id="santa-surprise" aria-live="polite" aria-hidden="true">
     <button class="santa-close" id="santa-close" aria-label="Dismiss Santa">×</button>
-    <div class="santa-figure" aria-hidden="true">🎅</div>
+    <div class="santa-figure" aria-hidden="true"><span class="santa-hat"></span></div>
     <p class="santa-kicker">A NORTH POLE SURPRISE</p>
-    <h2>HO HO HO! You’re invited to the Christmas celebration! 🎅</h2>
+    <h2>HO HO HO! You’re invited to the Christmas celebration!</h2>
     <button class="button button-light" id="santa-magic">SEND SOME CHRISTMAS MAGIC</button>
   </aside>
-  <div class="reindeer-flight" aria-hidden="true">🦌　✦　🦌</div>
+  <div class="reindeer-flight" aria-hidden="true"><img src="reindeer.png" alt=""></div>
   <header class="topbar">
     <a class="wordmark" href="#home"><span aria-hidden="true">✳</span> CHRISTMAS TOGETHER</a>
     <a class="top-link" href="#rsvp">SAVE YOUR SPOT <span aria-hidden="true">↓</span></a>
@@ -44,7 +44,7 @@
     <button id="music-toggle" aria-label="Play Christmas music" title="Play Christmas music">♫</button>
     <span id="music-status">Let It Snow · add your licensed MP3</span>
     <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.55" aria-label="Music volume">
-    <audio id="christmas-audio" preload="none" loop></audio>
+    <audio id="christmas-audio" preload="metadata" loop></audio>
   </div>
 
   <main>
@@ -61,9 +61,8 @@
         <span class="wreath-berry berry-a"></span><span class="wreath-berry berry-b"></span><span class="wreath-berry berry-c"></span>
         <div class="bow" aria-hidden="true"><span></span><span></span><i></i></div>
         <div class="hero-art-caption">GATHER • LAUGH • BE MERRY</div>
-        <button class="decoration bell-decoration" data-sound="bell" aria-label="Ring the Christmas bell">🔔</button>
-        <button class="decoration gift-decoration" id="gift-surprise" aria-label="Open a Christmas gift">🎁</button>
-        <span class="decoration elf-decoration" aria-hidden="true">🧝</span>
+        <button class="decoration bell-decoration" data-sound="bell" aria-label="Ring the Christmas bell"></button>
+        <button class="decoration gift-decoration" id="gift-surprise" aria-label="Open a Christmas gift"></button>
       </div>
       <span class="hero-snow" aria-hidden="true">✳　·　✧　·　✳</span>
     </section>
@@ -130,6 +129,6 @@
   </main>
   <footer><span>CHRISTMAS TOGETHER</span><span>MADE FOR GATHERING <span class="footer-star">✳</span></span></footer>
   <div class="magic-toast" id="magic-toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
