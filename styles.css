@@ -268,6 +268,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .map-card { height: 315px; overflow: hidden; border: 8px solid var(--gold); background: var(--pine); box-shadow: 0 16px 40px #0D371B80; }
 .map-card iframe { display: block; width: 100%; height: 100%; border: 0; }
 .map-note { margin: 12px 0; color: #FFF9EDB8; font-size: 11px; }
+a.map-note { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; padding-right: 12px; color: var(--gold); text-decoration: underline; text-decoration-color: #D4AF6570; text-underline-offset: 3px; touch-action: manipulation; }
+a.map-note:hover, a.map-note:focus-visible { color: var(--white); text-decoration-color: var(--white); }
 .location-tree { right: 5%; bottom: 17%; width: clamp(58px, 8vw, 100px); opacity: .55; }
 .location-finale {
   grid-column: 1 / -1;
