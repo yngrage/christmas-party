@@ -8,18 +8,21 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Christmas with the Fernandes Family">
   <meta property="og:description" content="A black-tie Christmas gathering. Save your spot and join us for a little holiday magic.">
-  <meta property="og:image" content="https://yngrage.github.io/christmas-party/christmas-card.svg">
+  <meta property="og:image" content="https://yngrage.github.io/christmas-party/christmas-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://yngrage.github.io/christmas-party/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Christmas with the Fernandes Family">
   <meta name="twitter:description" content="A black-tie Christmas gathering. Save your spot and join us for a little holiday magic.">
-  <meta name="twitter:image" content="https://yngrage.github.io/christmas-party/christmas-card.svg">
+  <meta name="twitter:image" content="https://yngrage.github.io/christmas-party/christmas-card.png">
   <title>Christmas with the Fernandes Family</title>
   <link rel="icon" href="christmas-card.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
   <header class="topbar">
@@ -37,16 +40,18 @@
         <p class="hero-footnote">Christmas with the Fernandes Family</p>
       </div>
       <div class="hero-art" role="img" aria-label="A Christmas wreath with a red bow and winter greenery">
+        <img class="hero-tree" src="christmas-tree.svg?v=4" alt="" aria-hidden="true">
         <div class="wreath-ring"><span class="wreath-leaf leaf-a">❧</span><span class="wreath-leaf leaf-b">❧</span><span class="wreath-leaf leaf-c">❧</span><span class="wreath-leaf leaf-d">❧</span><span class="wreath-leaf leaf-e">❧</span><span class="wreath-leaf leaf-f">❧</span><span class="wreath-leaf leaf-g">❧</span><span class="wreath-leaf leaf-h">❧</span></div>
         <span class="wreath-berry berry-a"></span><span class="wreath-berry berry-b"></span><span class="wreath-berry berry-c"></span>
         <div class="bow" aria-hidden="true"><span></span><span></span><i></i></div>
+        <img class="hero-reindeer" src="reindeer.png" alt="" aria-hidden="true">
         <div class="hero-art-caption">GATHER • LAUGH • BE MERRY</div>
       </div>
       <span class="hero-snow" aria-hidden="true">✳　·　✧　·　✳</span>
     </section>
 
     <section class="details section-pad" id="details">
-      <img class="clipart-tree details-tree" src="christmas-tree.svg" alt="" aria-hidden="true"><div class="section-heading">
+      <img class="clipart-tree details-tree" src="christmas-tree.svg?v=4" alt="" aria-hidden="true"><div class="section-heading">
         <p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> THE GATHERING</p>
         <h2>Good things<br>happen <em>together.</em></h2>
       </div>
@@ -62,21 +67,8 @@
       </div>
     </section>
 
-    <section class="location-section section-pad" id="location">
-      <div class="location-copy">
-        <p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> FIND YOUR WAY</p>
-        <h2>Meet us<br><em>here.</em></h2>
-        <p class="location-address">Amalthea Farms<br>Tap below for directions to the celebration.</p>
-        <a class="button button-red" id="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=18.8715876%2C73.2919792" target="_blank" rel="noopener">GET GOOGLE MAPS DIRECTIONS <span aria-hidden="true">↗</span></a>
-        <p class="map-note">Tap for directions on your phone</p>
-      </div>
-      <div class="map-card">
-        <iframe title="Map showing Amalthea Farms and its event pin" src="https://www.openstreetmap.org/export/embed.html?bbox=73.279%2C18.862%2C73.305%2C18.881&amp;layer=mapnik&amp;marker=18.8715876%2C73.2919792" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="eager"></iframe>
-      </div>
-    </section>
-
     <section class="rsvp-section" id="rsvp">
-      <img class="clipart-tree rsvp-tree" src="christmas-tree.svg" alt="" aria-hidden="true"><div class="rsvp-wrap">
+      <img class="clipart-tree rsvp-tree" src="christmas-tree.svg?v=4" alt="" aria-hidden="true"><div class="rsvp-wrap">
         <div class="rsvp-heading">
           <p class="eyebrow"><span class="eyebrow-line"></span> A PLACE AT THE TABLE</p>
           <h2>We saved<br>a spot <em>for you.</em></h2>
@@ -100,6 +92,26 @@
           <button class="button button-light submit-button" type="submit">CONTINUE TO WHATSAPP <span aria-hidden="true">↗</span></button>
           <p class="form-status" id="form-status" aria-live="polite">WhatsApp will open with your RSVP. Review it and tap Send to reserve your spot.</p>
         </form>
+      </div>
+    </section>
+
+    <section class="location-section section-pad" id="location">
+      <img class="clipart-tree location-tree" src="christmas-tree.svg?v=4" alt="" aria-hidden="true">
+      <div class="location-copy">
+        <p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> FIND YOUR WAY</p>
+        <h2>Meet us<br><em>here.</em></h2>
+        <p class="location-address">Amalthea Farms<br>Tap below for directions to the celebration.</p>
+        <a class="button button-red" id="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=18.8715876%2C73.2919792" target="_blank" rel="noopener">GET GOOGLE MAPS DIRECTIONS <span aria-hidden="true">↗</span></a>
+        <p class="map-note">Tap for directions on your phone</p>
+      </div>
+      <div class="map-card">
+        <iframe title="Map showing Amalthea Farms and its event pin" src="https://www.openstreetmap.org/export/embed.html?bbox=73.279%2C18.862%2C73.305%2C18.881&amp;layer=mapnik&amp;marker=18.8715876%2C73.2919792" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="eager"></iframe>
+      </div>
+      <div class="location-finale">
+        <p class="finale-kicker">A CHRISTMAS GATHERING</p>
+        <h2><span>MERRY</span><em>CHRISTMAS</em></h2>
+        <p>May your Christmas be filled with love, laughter &amp; magical memories.</p>
+        <img src="reindeer.png" alt="" aria-hidden="true">
       </div>
     </section>
 
