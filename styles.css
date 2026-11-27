@@ -197,6 +197,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .detail-label { color: var(--cranberry); }
 .detail-value { color: var(--forest); font: 18px/1.4 var(--serif); }
 .detail-note { color: var(--pine); font-size: 10px; font-weight: 400; letter-spacing: .06em; }
+.detail-directions-link { display: flex; min-height: 44px; flex-direction: column; align-items: flex-start; gap: 4px; color: inherit; text-decoration: none; touch-action: manipulation; }
+.detail-directions-link:focus-visible { border-radius: 2px; outline: 2px solid var(--gold); outline-offset: 4px; }
+.detail-directions-link:hover .detail-value, .detail-directions-link:focus-visible .detail-value { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
 .clipart-tree { position: absolute; z-index: 0; width: clamp(56px, 8vw, 100px); height: auto;  opacity: .68; pointer-events: none; }
 .details-tree { top: 24px; right: 5%; }
 
